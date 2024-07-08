@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potato Blight Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Potato Blight Detection</h1>
+        <form id="upload-form" method="POST" enctype="multipart/form-data">
+            <!-- Update input element to allow capturing from camera -->
+            <input type="file" id="image-input" name="file" accept="image/*" capture="camera">
+            <button type="submit">Predict</button>
+        </form>
+        <div id="image-preview">
+            <img id="preview-img" src="" alt="Image Preview" style="display: none;">
+        </div>
+        <div id="result">
+            <h3>Prediction Result:</h3>
+            <p id="prediction-text"></p>
+			<div id="recommendations"></div> <!-- Add this div for recommendations -->
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
